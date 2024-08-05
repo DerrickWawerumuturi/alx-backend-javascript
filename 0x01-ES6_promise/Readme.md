@@ -22,8 +22,10 @@ This project contains tasks for learning to use Promises in ECMAScript 2015 (ES6
 `2-then.js` contains a script that exports a function with the prototype `function handleResponseFromAPI(promise)`, which appends three handlers to the promise argument.
 
 - When the Promise resolves, return an object with the following attributes:
+```
   - `status: 200`
   - `body: 'success'`
+```
 - When the Promise rejects, return an empty Error object.
 - For every resolution, log `Got a response from the API` to the console.
 
@@ -44,13 +46,15 @@ This project contains tasks for learning to use Promises in ECMAScript 2015 (ES6
 - Import signUpUser from 4-user-promise.js and uploadPhoto from 5-photo-reject.js.
 - Export a function named handleProfileSignup that accepts three arguments firstName (string), lastName (string), and fileName (string) and calls the two other functions (signUpUser and uploadPhoto).
  - When the promises are all settled it should return an array with the following structure:
-[
-  {
-    status: status_of_the_promise,
-    value: value || reason // value or error returned by the Promise
-  },
-  ...
-]
+```javascript
+  [
+    {
+      status: status_of_the_promise,
+      value: value || reason // value or error returned by the Promise
+    },
+    ...
+  ]
+```
 ### 7. Load balancer
 `7-load_balancer.js` contains a script that exports a function with the prototype function loadBalancer(chinaDownload, USDownload), which returns the value returned by the promise that resolved the first, where chinaDownload and USDownload are Promises.
 
@@ -74,10 +78,12 @@ This project contains tasks for learning to use Promises in ECMAScript 2015 (ES6
 
 - Import uploadPhoto and createUser from utils.js.
 - Export an async function named asyncUploadUser that will call the two functions imported above and return an object with the following format:
+``` javascript
 {
   photo: response_from_uploadPhoto_function,
   user: response_from_createUser_function,
 }
+```
 - Import uploadPhoto and createUser from utils.js.
 - If one of the async function fails, return an empty object as shown below:
 {
