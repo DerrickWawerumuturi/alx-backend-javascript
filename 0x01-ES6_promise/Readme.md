@@ -35,3 +35,52 @@ This project contains tasks for learning to use Promises in ECMAScript 2015 (ES6
   ```javascript
   function handleProfileSignup()
 
+### 5. Reject the promises
+`5-photo-reject.js` contains a script that exports a function with the prototype function uploadPhoto(filename), which returns a Promise rejecting with an Error and the string $fileName cannot be processed, where fileName is a string.
+
+### 6. Handle multiple promises
+`6-final-user.js` contains a script that meets the following requirements.
+
+- Import signUpUser from 4-user-promise.js and uploadPhoto from 5-photo-reject.js.
+- Export a function named handleProfileSignup that accepts three arguments firstName (string), lastName (string), and fileName (string) and calls the two other functions (signUpUser and uploadPhoto).
+ - When the promises are all settled it should return an array with the following structure:
+[
+  {
+    status: status_of_the_promise,
+    value: value || reason // value or error returned by the Promise
+  },
+  ...
+]
+### 7. Load balancer
+`7-load_balancer.js` contains a script that exports a function with the prototype function loadBalancer(chinaDownload, USDownload), which returns the value returned by the promise that resolved the first, where chinaDownload and USDownload are Promises.
+
+### 8. Throw error / try catch
+`8-try.js` contains a script that meets the following requirements.
+
+- Exports a function with the prototype function divideFunction(numerator, denominator), where numerator and denominator are numbers.
+- When the denominator argument is equal to 0, the function should throw a new error with the message cannot divide by 0.
+- Otherwise it should return the numerator divided by the denominator.
+
+### 9. Throw an error
+`9-try.js` contains a script that meets the following requirements.
+
+- Export a function named guardrail that accepts a function argument called mathFunction.
+- The guardrail function should create and return an array named queue.
+- When the mathFunction function is executed, the value returned by the function should be appended to the queue. If this function throws an error, the error message should be appended to the queue.
+- In every case, the message Guardrail was processed should be added to the queue.
+
+### 10. Await / Async
+`100-await.js` contains a script that meets the following requirements.
+
+- Import uploadPhoto and createUser from utils.js.
+- Export an async function named asyncUploadUser that will call the two functions imported above and return an object with the following format:
+{
+  photo: response_from_uploadPhoto_function,
+  user: response_from_createUser_function,
+}
+- Import uploadPhoto and createUser from utils.js.
+- If one of the async function fails, return an empty object as shown below:
+{
+  photo: null,
+  user: null,
+}
